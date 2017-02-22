@@ -8,10 +8,15 @@
          
         $stateProvider
          .state('home', {
-             url: '/home',
+             url: '/',
+             controller: 'RoomCtrl as room',
              templateUrl: '/templates/home.html'
+         })
+         .state('room', {
+             url: '/room',
+             templateUrl: '/templates/room.html'
          });
-
+         
      }
  
      angular /*global angular*/

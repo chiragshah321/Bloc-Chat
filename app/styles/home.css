@@ -1,0 +1,25 @@
+body {
+    background-color: rgb(65, 152, 244);
+    font-family: 'Roboto Condensed', sans-serif;
+    color: white;
+}
+
+.navbar a {
+    color: white;
+}
+
+.chat-rooms {
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    text-align: Left;
+}
+
+.chat-rooms a {
+    color: white;
+}
+
+.empty-chat {
+    color: white;
+}
