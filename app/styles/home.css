@@ -1,10 +1,9 @@
 body {
-    background-color: rgb(65, 152, 244);
-    font-family: 'Roboto Condensed', sans-serif;
-    color: white;
-    width: 200px;
+ background-color: rgb(65, 152, 244);
+ font-family: 'Roboto Condensed', sans-serif;
+ color: white;
 }
-
+ 
 .navbar a {
     color: white;
 }

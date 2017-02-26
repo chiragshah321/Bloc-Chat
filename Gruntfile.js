@@ -1,13 +1,22 @@
 module.exports = function(grunt) {
 
-    grunt.registerTask( 'default', [ 'clean', 'copy', 'hapi', 'watch'] );
+    grunt.registerTask( 'default', [ 'clean', 'copy', 'hapi', 'watch', 'eslint'] );
 
     grunt.registerTask( 'build', [ 'clean', 'copy' ] );
 
     grunt.registerTask( 'run', [ 'hapi', 'watch' ]);
 
     grunt.initConfig({
-
+        
+        eslint: {
+            target: ["app/scripts/controllers",
+                     "app/scripts/services", 
+                     "app/templates", 
+                     "app/styles", 
+                     "app/pages", 
+            ]
+        },
+        
         watch: {
             hapi: {
                 files: [
@@ -69,13 +78,16 @@ module.exports = function(grunt) {
                 }
             }
         },
-
+        
         clean: ['./dist']
+
     });
 
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-hapi');
+    grunt.loadNpmTasks("grunt-eslint");
+
 
 };
