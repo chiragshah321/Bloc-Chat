@@ -1,16 +1,11 @@
 (function () {
-
-    function Room ($firebaseArray) {
-
-        var ref = firebase.database().ref().child("rooms");/* global firebase */
+    function Room($firebaseArray) {
+        var ref = firebase.database().ref().child('rooms');/* global firebase */
         var rooms = $firebaseArray(ref);
-
-        return {"all": rooms};
-
+        return {'all': rooms};
     }
 
-    angular /* global angular*/
-    .module("blocChat")
-    .factory("Room", ["$firebaseArray", Room]);
-
+    angular /* global angular */
+    .module('blocChat')
+    .factory('Room', ['$firebaseArray', Room]);
 })();
