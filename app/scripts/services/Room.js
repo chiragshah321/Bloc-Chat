@@ -1,8 +1,17 @@
 (function () {
     function Room($firebaseArray) {
+        var Room = {};
+
         var ref = firebase.database().ref().child('rooms');/* global firebase */
         var rooms = $firebaseArray(ref);
-        return {'all': rooms};
+
+        Room.all = rooms;
+
+        Room.addRoom = function (roomName) {
+            rooms.$add(roomName);
+        };
+
+        return Room;
     }
 
     angular /* global angular */
