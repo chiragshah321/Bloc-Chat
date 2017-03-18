@@ -1,5 +1,5 @@
 (function () {
-    function RoomCtrl($uibModal, Room) {
+    function RoomCtrl($uibModal, Room, Message) {
         this.roomData = Room;
 
         this.open = function () {
@@ -9,9 +9,17 @@
                 controllerAs: 'newRoom'
             });
         };
+
+        this.changeRoom = function (roomName) {
+            this.roomName = roomName;
+        };
+
+        this.changeMessages = function (roomId) {
+            this.roomMessages = Message.getByRoomId(roomId);
+        };
     }
 
     angular /* global angular */
         .module('blocChat')
-        .controller('RoomCtrl', ['$uibModal', 'Room', RoomCtrl]);
+        .controller('RoomCtrl', ['$uibModal', 'Room', 'Message', RoomCtrl]);
 })();
